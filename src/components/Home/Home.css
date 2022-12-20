@@ -1,0 +1,46 @@
+body {
+    background-color: #ddd;
+}
+
+.home-wrapper {
+    margin: 0 5rem;
+}
+
+.home-wrapper h1::after {
+    content: 'Customer Support Dashboard';
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+.nav-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+
+.nav-cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    height: 175px;
+    padding: 1rem;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 10px;
+}
+
+.nav-cards .card h2 {
+    margin: 0;
+}
+
+.nav-cards .card p {
+    font-size: 12px;
+}
+
+.nav-cards .card-footer {
+    display: flex;
+    align-items: center;
+}
