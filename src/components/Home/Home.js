@@ -1,9 +1,9 @@
 import './Home.css'
 
 import { Card } from '@mui/material';
-import CardActions from '@mui/material/CardActions';
+// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
@@ -34,9 +34,6 @@ export default function Home() {
                                 update and view customer subscription data
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Open</Button>
-                        </CardActions>
                     </Card>
                 </Grid>
                 <Grid item xs={12} lg={4}>
@@ -52,9 +49,6 @@ export default function Home() {
                                 View customer shopify data
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Open</Button>
-                        </CardActions>
                     </Card>
                 </Grid>
                 <Grid item xs={12} lg={4}>                
@@ -70,9 +64,6 @@ export default function Home() {
                                 View onboarding results of devices, schedules and state
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Open</Button>
-                        </CardActions>
                     </Card>
                 </Grid>
             </Grid>
