@@ -13,10 +13,9 @@ import DevicesIcon from "@mui/icons-material/Devices";
 export default function Home() {
   return (
     <main>
-      <Typography className="header" variant="h4" fontWeight="bold">
-        Home
+      <Typography className="header" variant="h2" fontWeight="bold">
+        HOME
       </Typography>
-      <Divider />
       <Grid container my={2} spacing={2}>
         <Grid item xs={12} lg={4}>
           <Card>

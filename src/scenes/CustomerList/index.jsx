@@ -1,7 +1,3 @@
-// import Typography from '@mui/material/Typography';
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
-import Box from "@mui/material/Box";
 import {
   TableContainer,
   Table,
@@ -9,9 +5,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  Paper,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 
 import { useNavigate } from "react-router-dom";
 
@@ -21,8 +15,6 @@ export default function Recharge() {
   const navigate = useNavigate();
 
   const [users, setUsers] = useState(null);
-
-  const handleClick = () => {};
 
   useEffect(() => {
     const getUsers = async () => {
@@ -39,27 +31,7 @@ export default function Recharge() {
   return (
     <main>
       <div className="customer-list.active">
-        <Box
-          my={2}
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <TextField
-            id="outlined-basic"
-            label="Enter Email"
-            variant="outlined"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
-          />
-        </Box>
-        <TableContainer component={Paper}>
+        <TableContainer>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
