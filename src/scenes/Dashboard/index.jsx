@@ -5,8 +5,13 @@ import { tokens } from "../../theme";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import StatBox from "../../components/StatBox";
+import Transaction from "../../components/Transactions";
 
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import EmailIcon from "@mui/icons-material/Email";
+import PaidIcon from "@mui/icons-material/Paid";
+import WarningIcon from "@mui/icons-material/Warning";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Customer() {
   let { customerId } = useParams();
@@ -69,37 +74,61 @@ export default function Customer() {
             </Box>
           </Grid>
           <Grid item xs={6}>
-            <Box
-              backgroundColor={colors.primary[400]}
-              width={"100%"}
-              height={200}
-            ></Box>
+            <Box backgroundColor={colors.primary[400]} height={200}></Box>
           </Grid>
           <Grid item xs={6}>
-            <Box
-              backgroundColor={colors.primary[400]}
-              width={"100%"}
-              height={200}
-            ></Box>
+            <Box backgroundColor={colors.primary[400]} height={200}></Box>
           </Grid>
           <Grid item xs={12}>
-            <Box
-              backgroundColor={colors.primary[400]}
-              width={"100%"}
-              height={200}
-            ></Box>
+            <Transaction />
           </Grid>
           <Grid item xs={3}>
-            <StatBox />
+            <StatBox
+              title="Emails Recieved"
+              subTitle={"This is the first subtitle"}
+              progress="0.25"
+              icon={
+                <EmailIcon
+                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                />
+              }
+            />
           </Grid>
           <Grid item xs={3}>
-            <StatBox />
+            <StatBox
+              title="Money Spent"
+              subTitle={"This is the second subtitle"}
+              progress="0.65"
+              icon={
+                <PaidIcon
+                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                />
+              }
+            />
           </Grid>
           <Grid item xs={3}>
-            <StatBox />
+            <StatBox
+              title="Incidents Reported"
+              subTitle={"This is the third subtitle"}
+              progress="0.85"
+              icon={
+                <WarningIcon
+                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                />
+              }
+            />
           </Grid>
           <Grid item xs={3}>
-            <StatBox />
+            <StatBox
+              title="Orders Recieved"
+              subTitle={"This is the fourth subtitle"}
+              progress="0.90"
+              icon={
+                <ShoppingCartIcon
+                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                />
+              }
+            />
           </Grid>
         </Grid>
       </main>
