@@ -1,5 +1,3 @@
-import "./CustomerList.css";
-
 // import Typography from '@mui/material/Typography';
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -23,6 +21,8 @@ export default function Recharge() {
   const navigate = useNavigate();
 
   const [users, setUsers] = useState(null);
+
+  const handleClick = () => {};
 
   useEffect(() => {
     const getUsers = async () => {
