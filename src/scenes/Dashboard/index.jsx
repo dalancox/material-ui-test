@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import StatBox from "../../components/StatBox";
 import Transaction from "../../components/Transactions";
+import Subscriptions from "../../components/Subscriptions";
+import OrderHistory from "../../components/OrderHistory";
 
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import EmailIcon from "@mui/icons-material/Email";
@@ -74,10 +76,10 @@ export default function Customer() {
             </Box>
           </Grid>
           <Grid item xs={6}>
-            <Box backgroundColor={colors.primary[400]} height={200}></Box>
+            <OrderHistory />
           </Grid>
           <Grid item xs={6}>
-            <Box backgroundColor={colors.primary[400]} height={200}></Box>
+            <Subscriptions />
           </Grid>
           <Grid item xs={12}>
             <Transaction />
