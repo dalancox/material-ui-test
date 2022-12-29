@@ -15,9 +15,14 @@ import PaidIcon from "@mui/icons-material/Paid";
 import WarningIcon from "@mui/icons-material/Warning";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Customer() {
   let { customerId } = useParams();
+  const navigate = useNavigate();
+
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -27,20 +32,25 @@ export default function Customer() {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/users/${customerId}`
       );
-      if (response.status === 404) return;
-
-      const json = await response.json();
-      setUser(json);
+      if (response.status === 200) {
+        const json = await response.json();
+        setUser(json);
+        setLoading(false);
+      } else if (response.status === 401) {
+        console.log("error");
+      }
     };
 
     getCustomer();
   }, [customerId]);
 
-  if (user) {
+  if (loading) {
+    return <h1>Loading...</h1>;
+  } else {
     return (
       <main>
         <Grid container spacing={1}>
-          <Grid item xs={10}>
+          <Grid item xs={12} md={10}>
             <Typography variant="h2" fontWeight="bold" gutterBottom>
               {user.name}
             </Typography>
@@ -57,7 +67,8 @@ export default function Customer() {
             display="flex"
             alignItems="flex-end"
             justifyContent="flex-end"
-            xs={2}
+            xs={12}
+            md={2}
           >
             <Box display="flex">
               <Button
@@ -75,16 +86,16 @@ export default function Customer() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <OrderHistory />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Subscriptions />
           </Grid>
           <Grid item xs={12}>
             <Transaction />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={6} lg={3}>
             <StatBox
               title="Emails Recieved"
               subTitle={"This is the first subtitle"}
@@ -96,7 +107,7 @@ export default function Customer() {
               }
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={6} lg={3}>
             <StatBox
               title="Money Spent"
               subTitle={"This is the second subtitle"}
@@ -108,7 +119,7 @@ export default function Customer() {
               }
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={6} lg={3}>
             <StatBox
               title="Incidents Reported"
               subTitle={"This is the third subtitle"}
@@ -120,7 +131,7 @@ export default function Customer() {
               }
             />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={6} lg={3}>
             <StatBox
               title="Orders Recieved"
               subTitle={"This is the fourth subtitle"}
@@ -133,12 +144,6 @@ export default function Customer() {
             />
           </Grid>
         </Grid>
-      </main>
-    );
-  } else {
-    return (
-      <main>
-        <h1>No User!</h1>
       </main>
     );
   }
