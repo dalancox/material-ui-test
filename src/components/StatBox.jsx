@@ -20,9 +20,7 @@ export default function StatBox({ title, subTitle, progress, icon }) {
       >
         <Box>
           {icon}
-          <Typography variant="h3" mb={1.5}>
-            {title}
-          </Typography>
+          <Typography variant="h3">{title}</Typography>
           <Typography variant="body2" color={colors.greenAccent[600]}>
             {subTitle}
           </Typography>

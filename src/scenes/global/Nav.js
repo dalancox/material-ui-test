@@ -85,9 +85,6 @@ export default function Nav() {
         anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
       >
         <MenuItem>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem>
           <Avatar /> My account
         </MenuItem>
         <Divider />
