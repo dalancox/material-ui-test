@@ -15,11 +15,8 @@ import PaidIcon from "@mui/icons-material/Paid";
 import WarningIcon from "@mui/icons-material/Warning";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-import { useNavigate } from "react-router-dom";
-
 export default function Customer() {
   let { customerId } = useParams();
-  const navigate = useNavigate();
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);

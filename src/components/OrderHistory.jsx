@@ -7,7 +7,7 @@ export default function OrderHistory() {
   const colors = tokens(theme.palette.mode);
   return (
     <>
-      <Box backgroundColor={colors.primary[400]} height={200}>
+      <Box backgroundColor={colors.primary[400]} height={400}>
         <Typography>Order History</Typography>
       </Box>
     </>
