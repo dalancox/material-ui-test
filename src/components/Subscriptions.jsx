@@ -2,10 +2,10 @@ import { useTheme, Box, Typography } from "@mui/material";
 
 import { tokens } from "../theme";
 
-import { pieChartData as data } from "../data/mockData";
+import { pieChartData } from "../data/mockData";
 import { ResponsivePie } from "@nivo/pie";
 
-export default function Subscriptions() {
+export default function Subscriptions({ data = pieChartData }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
