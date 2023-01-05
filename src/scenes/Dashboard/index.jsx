@@ -84,10 +84,10 @@ export default function Customer() {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <OrderHistory />
+            <Subscriptions />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Subscriptions />
+            <OrderHistory />
           </Grid>
           <Grid item xs={12}>
             <Transaction />

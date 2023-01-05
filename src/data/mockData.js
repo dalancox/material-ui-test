@@ -430,6 +430,32 @@ export const mockPieData = [
   },
 ];
 
+export const pieChartData = [
+  {
+    id: "Food",
+    value: 5,
+  },
+  {
+    id: "Tost",
+    value: 2,
+  },
+  {
+    id: "php",
+    label: "php",
+    value: 3,
+  },
+  {
+    id: "ruby",
+    label: "ruby",
+    value: 2,
+  },
+  {
+    id: "haskell",
+    label: "haskell",
+    value: 8,
+  },
+];
+
 export const mockLineData = [
   {
     id: "japan",
